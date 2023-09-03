@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body {
+    height: 100vh;
+}
+
 /* utility selectors */
 
 .container {
