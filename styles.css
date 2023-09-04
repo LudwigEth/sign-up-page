@@ -8,6 +8,10 @@ body {
     height: 100vh;
 }
 
+label {
+    font-size: 1.2rem;
+}
+
 /* utility selectors */
 
 .container {
@@ -23,9 +27,31 @@ body {
     align-items: center;
 }
 
+.max-width {
+    width: 100%;
+}
+
 /* main layout */
 
 .sign-up-header,
 .sign-up-footer {
     flex: auto;
+}
+
+.sign-up-header {
+    background-color: lightblue;
+}
+
+.sign-up-body {
+    background-color: lightgrey;
+}
+
+.sign-up-window {
+    background-color: lightgreen;
+    height: 500px;
+    width: min(400px, 100%);
+}
+
+.sign-up-footer {
+    background-color: lightpink;
 }
