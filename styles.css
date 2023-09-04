@@ -60,3 +60,9 @@ label {
 .sign-up-footer {
     background-color: lightpink;
 }
+
+/* input styles */
+
+.sign-up-input {
+    width: 90%;
+}
