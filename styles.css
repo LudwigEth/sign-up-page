@@ -10,6 +10,7 @@ body {
 
 label {
     font-size: 1.2rem;
+    position: absolute;
 }
 
 /* utility selectors */
@@ -29,6 +30,10 @@ label {
 
 .max-width {
     width: 100%;
+}
+
+.relative {
+    position: relative;
 }
 
 /* main layout */
