@@ -6,17 +6,26 @@
 
 body {
     height: 100vh;
+    background-color: #8ccc88;
+}
+
+h1 {
+    color: black;
 }
 
 label {
-    font-size: 1.2rem;
+    font-size: 1rem;
     position: absolute;
+    left: 20px;
+    top: 16px;
+    color: #33333390;
 }
 
 /* utility selectors */
 
 .container {
     display: flex;
+    width: 100%;
 }
 
 .column {
@@ -39,30 +48,191 @@ label {
 /* main layout */
 
 .sign-up-header,
+.sign-up-form,
 .sign-up-footer {
     flex: auto;
 }
 
-.sign-up-header {
-    background-color: lightblue;
-}
-
 .sign-up-body {
-    background-color: lightgrey;
+    padding: 0 32px;
 }
 
 .sign-up-window {
-    background-color: lightgreen;
-    height: 500px;
-    width: min(400px, 100%);
+    background-color: lightpink;
+    border-radius: 5px;
+    padding: 8px;
 }
 
-.sign-up-footer {
-    background-color: lightpink;
+.sign-up-heading {
+    display: block;
+    text-align: left;
+    font-size: 2rem;
+    width: 100%;
+    margin: 0 0 32px;
+}
+
+.sign-up-form {
+    justify-content: space-between;
 }
 
 /* input styles */
 
-.sign-up-input {
-    width: 90%;
+input,
+button {
+    border-radius: 8px;
+}
+
+.pw-input {
+    margin-bottom: -16px;
+}
+
+input:focus {
+    outline: 1px solid lime;
+}
+
+.input-container {
+    margin-bottom: 16px;
+}
+
+.input-container input,
+.submit-btn {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 16px 20px 0;
+    border: none;
+}
+
+.submit-btn {
+    display: inline-block;
+    background-color: violet;
+    padding: 16px;
+    font-size: 1rem;
+}
+
+button:active {
+    transform: scale(0.98);
+    transition-duration: 0.1s;
+    opacity: 0.8;
+}
+
+.show-pw {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    font-size: 1rem;
+    color: #33333390;
+    border: none;
+    background-color: inherit;
+}
+
+.pw-info {
+    position: absolute;
+    right: 69px;
+    top: 16px;
+    border: none;
+    background-color: #ffeeee;
+    color: #33333390;
+    font-size: 1rem;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+}
+
+.pw-error-msg {
+    width: 100%;
+    text-align: left;
+}
+
+.input-error {
+    text-align: left;
+    color: red;
+    font-size: 0.9rem;
+    height: 16px;
+}
+
+.name-container {
+    gap: 16px;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+#pw-dialog {
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    z-index: 9999;
+    border: none;
+    background-color: #FFCCCC;
+    border-radius: 8px;
+    padding: 8px 32px 8px 8px;
+    opacity: 0.85;
+    font-size: 16px;
+}
+
+#close-pw-dialog {
+    width: fit-content;
+    height: fit-content;
+    font-size: 16px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    background-color: inherit;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.pw-security {
+    padding-left: 8px;
+    gap: 8px;
+}
+
+#pw-security-low,
+#pw-security-medium,
+#pw-security-good {
+    width: 32px;
+    height: 6px;
+    border-radius: 32px;
+}
+
+.pw-low {
+    background-color: hsl(55, 100%, 55%);
+}
+
+.pw-medium {
+    background-color: hsl(88, 100%, 69%);
+}
+
+.pw-good {
+    background-color: hsl(128, 100%, 33%);
+}
+
+/* animation */
+.input-container input:focus {
+    background-color: #ffeeee;
+    border: none;
+}
+.input-container input:focus~label,
+.input-container input:valid~label,
+.input-container input[type="email"]:not(:placeholder-shown)~label{
+    top: 7px;
+    font-size: 0.8rem;
+    transition-duration: 0.1s, 0.1s, 0.1s;
+    transition-property: font, top, transform;
+    transition-timing-function: ease, ease, ease;
+}
+
+@media (min-width:769px) {
+    .sign-up-window {
+        width: 350px;
+    }
+    .sign-up-body {
+        width: 450px;
+        padding: 2rem;
+    }
 }

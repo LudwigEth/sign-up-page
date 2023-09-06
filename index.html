@@ -8,37 +8,63 @@
     <title>Sign-Up-Page</title>
 </head>
 <body class="container column centering">
-    <div class="sign-up-header container max-width">Cozy Club</div>
-    <div class="sign-up-body container centering max-width">
-        <div class="sign-up-window container column centering">
+    <div class="sign-up-header container"></div>
+    <div class="sign-up-body container centering">
+        <div class="sign-up-window container column centering relative">
             <h1 class="sign-up-heading">Sign Up</h1>
-            <form class="sign-up-form container column centering " action="" method="post">
-                <div class="container relative">
-                    <label for="first-name">Firstname</label>
-                    <input type="text" name="first_name" id="first-name" class="sign-up-input">
+            <form id="sign-up-form" class="sign-up-form container column centering relative">
+                <div class="container name-container">
+                    <div class="container relative input-container">
+                        <input type="text" name="first_name" id="first-name" class="sign-up-input" required>
+                        <label for="first-name">Firstname</label>
+                    </div>
+                    <div class="container relative input-container">
+                        <input type="text" name="last_name" id="last-name" class="sign-up-input" required>
+                        <label for="last-name">Lastname</label>
+                    </div>
                 </div>
-                <div class="container relative">
-                    <label for="last-name">Lastname</label>
-                    <input type="text" name="last_name" id="last-name" class="sign-up-input">
-                </div>
-                <div class="container relative">
+                <div class="container relative input-container">
+                    <input type="email" name="email" id="email" class="sign-up-input" placeholder="" required>
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="sign-up-input">
                 </div>
-                <div class="container relative">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="sign-up-input">
+                <div class="container relative input-container">
+                    <input type="password" name="password" id="password" class="pw-input sign-up-input" autocomplete="on" required>
+                    <label for="password" class="inline-flex">
+                        Password
+                        <div class="container centering inline-flex pw-security">
+                            <div id="pw-security-low"></div>
+                            <div id="pw-security-medium"></div>
+                            <div id="pw-security-good"></div>
+                        </div>
+                    </label>
+                    <button id="openPwDialog" class="pw-info"  type="button">i</button>
+                    <button class="show-pw" type="button">SHOW</button>
                 </div>
-                <div class="container relative">
+                <div id="pw-requirement" class="container input-error"></div>
+                <div class="container relative input-container">
+                    <input type="password" name="password" id="password-confirm" class="pw-input sign-up-input" autocomplete="on" required>
                     <label for="password-confirm">Confirm Password</label>
-                    <input type="password" name="password" id="password-confirm" class="sign-up-input">
+                    <button class="show-pw" type="button">SHOW</button>
                 </div>
-                <div class="container relative">
-                    <button type="submit">Create Account</button>
-                </div>
+                <div id="pw-input-error" class="container input-error"></div>
+                <button id="submit-btn" class="submit-btn" type="submit">Create Account</button>
             </form>
+            <dialog id="pw-dialog" class="pw-dialog">
+                <div class="container">
+                    <h3>Password Must Include</h3>
+                    <button id="close-pw-dialog" type="button">❎</button>
+                </div>
+                <ul>
+                    <li>Lower Case Letter</li>
+                    <li>Upper Case Letter</li>
+                    <li>Number</li>
+                    <li>Symbol: ? ! - _ . ,</li>
+                    <li>At Least 8 Character</li>
+                    <li>Under 128 Character</li>
+                </ul>
+            </dialog>
         </div>
     </div>
-    <div class="sign-up-footer container max-width">Footer</div>
+    <div class="sign-up-footer container"></div>
 </body>
 </html>
