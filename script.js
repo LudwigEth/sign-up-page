@@ -22,15 +22,7 @@ closePwDialog.addEventListener("click", e => {
 });
 
 passwordDialog.addEventListener("click", e => {
-    const dialogRect = passwordDialog.getBoundingClientRect();
-    if (
-        e.clientX < dialogRect.left ||
-        e.clientX > dialogRect.right ||
-        e.clientY < dialogRect.top ||
-        e.clientY > dialogRect.bottom
-    ) {
-        passwordDialog.close();
-    }
+    passwordDialog.close();
 });
 
 form.addEventListener("submit", e => {
