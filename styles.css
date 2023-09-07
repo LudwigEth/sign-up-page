@@ -57,7 +57,8 @@ label {
     padding: 0 32px;
 }
 
-.sign-up-window {
+.sign-up-window,
+#pw-dialog {
     background-color: lightpink;
     border-radius: 5px;
     padding: 8px;
@@ -169,7 +170,6 @@ ul, ol, li {
     z-index: 9999;
     border: none;
     background-color: #FFCCCC;
-    border-radius: 8px;
     padding: 8px 32px 8px 8px;
     opacity: 0.85;
     font-size: 16px;
